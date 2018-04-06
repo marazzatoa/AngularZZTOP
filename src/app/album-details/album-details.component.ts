@@ -25,7 +25,7 @@ export class AlbumDetailsComponent implements OnInit{
   }
 
   ngOnInit(){
-    this.route.params.subscribe(params => {
+    this.sub = this.route.params.subscribe(params => {
       let id = Number.parseInt(params['id']);
       this.album = this.albumService.get(id);
     });
