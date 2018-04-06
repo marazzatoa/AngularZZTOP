@@ -9,7 +9,7 @@ import { AlbumListComponent } from './album-list/album-list.component';
 import { AlbumDetailsComponent } from './album-details/album-details.component';
 import { AlbumService} from './album.service';
 
-import { appRouterModule } from "./app.routes";
+import { AppRoutingModule } from "./app-routing.module";
 
 
 @NgModule({
@@ -22,7 +22,7 @@ import { appRouterModule } from "./app.routes";
     BrowserModule,
     FormsModule,
     HttpModule,
-    appRouterModule
+    AppRoutingModule
   ],
   providers: [AlbumService],
   bootstrap: [AppComponent]

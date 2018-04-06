@@ -1,3 +1,4 @@
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule }  from '@angular/router';
 import { AlbumListComponent } from './album-list/album-list.component';
 import { AlbumDetailsComponent } from './album-details/album-details.component';
@@ -21,5 +22,8 @@ const routes: Routes = [
   },
 ];
 
-
-export const appRouterModule = RouterModule.forRoot(routes);
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
