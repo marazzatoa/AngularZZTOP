@@ -6,17 +6,7 @@ import { ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-album-details',
-  template: `
-  <section *ngIf="album">
-    <h2>You selected: {{album.title}}</h2>
-    <h3>Description</h3>
-    <p>
-       {{album.title}} released {{album.year}}
-    </p>
-  </section>
-
-  <button (click)="gotoAlbumsList()">Back to albums list</button>
-  `,
+  templateUrl: './album-details.component.html',
   styles: []
 })
 export class AlbumDetailsComponent implements OnInit{
@@ -37,6 +27,12 @@ export class AlbumDetailsComponent implements OnInit{
   ngOnDestroy(){
       this.sub.unsubscribe();
   }
+
+  saveAlbumDetails(){
+       alert(`saved!!! ${JSON.stringify(this.album)}`);
+       this.albumService.save(this.album);
+  }
+
 
   gotoAlbumsList(){
     let link= ['/albums'];

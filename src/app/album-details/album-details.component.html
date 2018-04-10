@@ -1,0 +1,36 @@
+<section *ngIf="album">
+  <h2>You selected: {{album.title}}</h2>
+  <h3>Description</h3>
+  <p>
+     {{album.title}} released {{album.year}}, label {{album.label}}
+  </p>
+</section>
+<section>
+    <form (ngSubmit)="saveAlbumDetails()" #albumForm="ngForm">
+      <div>
+        <label for="title">Title: </label>
+        <input type="text" name="title" [(ngModel)]="album.title">
+
+          <img [src]="album.imgUrl">
+
+      </div>
+      <div>
+        <label for="year">Year: </label>
+        <input type="number" name="year" [(ngModel)]="album.year">
+      </div>
+      <div>
+        <label for="label">Label: </label>
+        <input type="text" name="label" required [(ngModel)]="album.label"  #label="ngModel">
+        <div [hidden]="label.valid || label.pristine" class="error">
+          Label is required to save album!
+        </div>
+
+
+      </div>
+      <button type="submit" [disabled]="!albumForm.form.valid">Save</button>
+
+    </form>
+  </section>
+
+
+<button (click)="gotoAlbumsList()">Back to albums list</button>
