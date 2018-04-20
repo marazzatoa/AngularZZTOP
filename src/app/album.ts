@@ -4,4 +4,5 @@ export interface Album {
   year: number;
   label:string;
   imgUrl:string;
+  genre?:string;
 }

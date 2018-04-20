@@ -24,9 +24,14 @@
         <div [hidden]="label.valid || label.pristine" class="error">
           Label is required to save album!
         </div>
-
-
       </div>
+      <div>
+        <label for="genre">Genre:</label>
+        <select name="genre" [(ngModel)]="album.genre">
+          <option *ngFor="let genre of genres" [value]="genre">{{genre}}</option>
+        </select>
+      </div>
+
       <button type="submit" [disabled]="!albumForm.form.valid">Save</button>
 
     </form>

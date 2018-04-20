@@ -10,6 +10,7 @@ import { ActivatedRoute, Router} from '@angular/router';
   styles: []
 })
 export class AlbumDetailsComponent implements OnInit{
+  genres: string[] = ['Texas blues', 'blues rock', 'boogie rock', 'synthrock']
   album: Album;
    sub: any;
 
